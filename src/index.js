@@ -8,15 +8,35 @@ let days = [
   "Friday",
   "Saturday",
 ];
+
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 let day = days[now.getDay()];
+let date = now.getDate();
+let month = months[now.getMonth()];
 let hours = now.getHours();
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = "0" + minutes;
 }
 
+let h2 = document.querySelector("h2");
+h2.innerHTML = `${day} ${date} ${month}`;
+
 let h3 = document.querySelector("h3");
-h3.innerHTML = `${day} ${hours}:${minutes}`;
+h3.innerHTML = `Local time ${hours}:${minutes}`;
 
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);

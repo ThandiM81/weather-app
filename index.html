@@ -10,34 +10,38 @@
 
   </head>
   <body>
-    <div class="container"></div>
-  
-      
-<h1>Kingston</h1>
-<h3>Date and Time</h3>
-        <div class="form-row">
-          <div class="row justify-content-center">
-            <div class="col-4">
-              <p class = "description-heading"> Current conditions:</p>
-              <img src="images/sun.svg" alt="weather icon today" class = "weather-icon-today" />
-              <p class = "description" id = "current-description">Sunny</p>
-            </div>
-          <div class="col-4 conditions">
-              <h4 class="temperature"><span id = "tempDisplay">25°C</span></h4>
-              
-              <p class="conditions">
-                <small class="text-muted" id= "rain">Precipitation: 0%</small>
-              </p>
-              <p class="conditions">
-                <small class="text-muted" id = "humid">Humidity: 46%</small>
-              </p>
-              <p class="conditions">
-                <small class="text-muted" id = "wind">Wind: 9km/h</small>
-              </p>
-          </div>
-        </div>   
+    <div class="container">
+<h1>Kingston
+<a id = "conversion" href ="#" id = "celsius-templink">| °C </a> <a id = "conversion" href ="#" id = "fahren-templink"> °F</a></h1>
+<h2>Date</h2>
+<h3>Local time</h3>
+
+<div class = "row">
+  <div class = "col-6">
+  <img src="images/sun.svg" alt="weather icon today" class = "weather-icon-today" />
+  <span class = "currentTemp" id = "tempDisplay">25°</span>
+  </div>  
+    <div class = "col-6">        
+    <ul class="conditions">
+    <li>
+    <small class="text-muted" id= "current">Current conditions: Sunny</small>
+    </li>
+    <li>
+    <small class="text-muted" id= "rain">Precipitation: 0%</small>
+    </li>
+    <li>
+    <small class="text-muted" id = "humid">Humidity: 46%</small>
+    </li>
+    <li>
+    <small class="text-muted" id = "wind">Wind: 9km/h</small>
+    </li>
+    </ul>
+    </div>  
+</div>
+    
    <script src="src/index.js"> </script>
-    <p class = "footer"> <a href = "https://github.com/ThandiM81/weather-app"> Open-source code</a> by Thandi M</p>
+   <br />
+    <p class = "footer"><small> <a id= "footer" href = "https://github.com/ThandiM81/weather-app"> Open-source code</a> by Thandi M</small></p>
   </body>
 </html>
 
