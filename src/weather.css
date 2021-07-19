@@ -1,0 +1,120 @@
+body {
+  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
+  margin: 30px 30px;
+  display: block;
+}
+header {
+  text-align: center;
+}
+h1 {
+  text-align: center;
+  padding-top: 10px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+img {
+  max-width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+.container {
+  margin: 80px;
+  border-radius: 5px;
+  border-style: solid;
+  max-width: 600px;
+  padding: 20px;
+}
+.form-group {
+  margin: 0 10px;
+  padding: 0 30px;
+}
+
+#city-entry.form-control {
+  width: 100%;
+}
+
+#search-city.form-group.mx-sm-3.mb-2 {
+  border-radius: 5px;
+  background: #fff;
+  color: black;
+  font-size: 14px;
+  padding: 6px 20px;
+  transition: all 200ms ease;
+  margin-top: 10px;
+}
+#current-location.form-group.mx-sm-3.mb-2 {
+  border-radius: 5px;
+  background: #fff;
+  color: black;
+  font-size: 14px;
+  padding: 6px 30px;
+  transition: all 200ms ease;
+  margin-top: 10px;
+}
+
+.location-button {
+  border-radius: 5px;
+  background: rgb(150, 175, 190);
+  color: black;
+  font-size: 14px;
+  padding: 8px 50px;
+  transition: all 200ms ease;
+}
+.location {
+  max-width: 15%;
+}
+.row {
+  padding: 10px;
+}
+.weather-icon-today {
+  max-width: 50%;
+}
+.description {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 0;
+}
+.description-heading {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 0;
+}
+.conditions {
+  margin-bottom: 0;
+  font-family: monospace;
+  text-align: center;
+}
+.col-4.conditions {
+  text-align: center;
+}
+.current {
+  padding: 30px 30px 0 30px;
+}
+.temperature {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.min-max {
+  font-size: 10px;
+}
+.card-group {
+  padding: 0 30px;
+  margin: 20px 10px;
+}
+.card-body {
+  text-align: center;
+}
+.footer {
+  text-align: center;
+  font: monospace;
+}
