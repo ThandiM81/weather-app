@@ -11,6 +11,21 @@
   </head>
   <body>
     <div class="container">
+      <form id = "search-form"class = "mb-3">
+        <div class = "row">
+          <div class = "col-6">
+          <input type = "search" placeholder = "Enter city...." class = "form-control" />
+          </div>
+          <div class = "col-3">
+          <input type = "submit" value = "Search" class = "search-button" />
+          </div>
+          <div class = "col-3">
+          <input type = "submit" value = "Current location" class = "location-button" />
+          </div>
+          
+      </div>
+    
+    </form>
 <h1>Kingston
 <a id = "conversion" href ="#" id = "celsius-templink">| °C </a> <a id = "conversion" href ="#" id = "fahren-templink"> °F</a></h1>
 <h2>Date</h2>
@@ -18,22 +33,22 @@
 
 <div class = "row">
   <div class = "col-6">
-  <img src="images/sun.svg" alt="weather icon today" class = "weather-icon-today" />
-  <span class = "currentTemp" id = "tempDisplay">25°</span>
+  <img src="images/sun.svg" alt="weather icon today" class = "iconNow" />
+  <span class = "currentTemp" id = "tempDisplay"> °</span>
   </div>  
     <div class = "col-6">        
     <ul class="conditions">
     <li>
-    <small class="text-muted" id= "current">Current conditions: Sunny</small>
+    <small class="text-muted" id= "current">Current conditions: </small>
     </li>
     <li>
-    <small class="text-muted" id= "rain">Precipitation: 0%</small>
+    <small class="text-muted" id= "rain">Precipitation: %</small>
     </li>
     <li>
-    <small class="text-muted" id = "humid">Humidity: 46%</small>
+    <small class="text-muted" id = "humid">Humidity: %</small>
     </li>
     <li>
-    <small class="text-muted" id = "wind">Wind: 9km/h</small>
+    <small class="text-muted" id = "wind">Wind: km/h</small>
     </li>
     </ul>
     </div>  

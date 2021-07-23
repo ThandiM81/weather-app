@@ -27,6 +27,9 @@ let day = days[now.getDay()];
 let date = now.getDate();
 let month = months[now.getMonth()];
 let hours = now.getHours();
+if (hours < 10) {
+  hours = "0" + hours;
+}
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = "0" + minutes;
@@ -36,9 +39,15 @@ let h2 = document.querySelector("h2");
 h2.innerHTML = `${day} ${date} ${month}`;
 
 let h3 = document.querySelector("h3");
-h3.innerHTML = `Local time ${hours}:${minutes}`;
+h3.innerHTML = `Last updated: ${hours}:${minutes}`;
 
 function showTemperature(response) {
+  let iconDisplay = response.data.weather[0].icon;
+  iconDisplay.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconDisplay}@2x.png`
+  );
+
   let temperature = Math.round(response.data.main.temp);
   let h4 = document.querySelector("#tempDisplay");
   h4.innerHTML = `${temperature}°C`;
