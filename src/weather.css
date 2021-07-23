@@ -36,11 +36,14 @@ ul {
   text-align: left;
 }
 .container {
-  margin: 80px;
   border-radius: 5px;
   border-style: solid;
   max-width: 800px;
   padding: 20px;
+}
+.weather-app-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
 }
 .search-button {
   line-height: 30px;
