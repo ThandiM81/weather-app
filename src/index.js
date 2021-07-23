@@ -35,27 +35,28 @@ if (minutes < 10) {
   minutes = "0" + minutes;
 }
 
-let h2 = document.querySelector("h2");
-h2.innerHTML = `${day} ${date} ${month}`;
-
-let h3 = document.querySelector("h3");
-h3.innerHTML = `Last updated: ${hours}:${minutes}`;
-
 function showTemperature(response) {
-  let iconDisplay = response.data.weather[0].icon;
-  iconDisplay.setAttribute(
+  let icon = document.querySelector("#iconNow");
+  icon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${iconDisplay}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
   let temperature = Math.round(response.data.main.temp);
-  let h4 = document.querySelector("#tempDisplay");
-  h4.innerHTML = `${temperature}°C`;
+  let temperatureShown = document.querySelector("#tempDisplay");
+  temperatureShown.innerHTML = `${temperature}°`;
+
   let h1 = document.querySelector("h1");
-  h1.innerHTML = `${response.data.name}`;
+  h1.innerHTML = response.data.name;
+
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = `${day} ${date} ${month}`;
+
+  let timeElement = document.querySelector("#time");
+  timeElement.innerHTML = `Last updated at ${hours}:${minutes}`;
 
   let description = response.data.weather[0].description;
-  let currentDescriptor = document.querySelector("#current-description");
+  let currentDescriptor = document.querySelector("#current");
   currentDescriptor.innerHTML = `${description}`;
 
   let precipitation = Math.round(response.data.main.temp);
@@ -83,19 +84,23 @@ function showPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPlace);
 }
-let button = document.querySelector("#current-location");
+let button = document.querySelector("#location-search");
 button.addEventListener("click", showPosition);
 
-function search(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-entry");
-  city.innerHTML = `${city.value}`;
-
+function search(city) {
   let apiKey = "c0e5a5c3b664f47b5456256e176f47e9";
   let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=${units}`;
-
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-entry");
+  search(city.value);
+}
+
 let button1 = document.querySelector("#search-city");
-button1.addEventListener("click", search);
+button1.addEventListener("click", handleSubmit);
+
+search("Harare");
