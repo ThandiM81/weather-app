@@ -42,9 +42,11 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
+  celsiusTemp = response.data.main.temp;
+
   let temperature = Math.round(response.data.main.temp);
   let temperatureShown = document.querySelector("#tempDisplay");
-  temperatureShown.innerHTML = `${temperature}°`;
+  temperatureShown.innerHTML = `${temperature}`;
 
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
@@ -102,5 +104,30 @@ function handleSubmit(event) {
 
 let button1 = document.querySelector("#search-city");
 button1.addEventListener("click", handleSubmit);
+
+function displayFahrenTemp(event) {
+  event.preventDefault();
+  let temperatureShown = document.querySelector("#tempDisplay");
+  fahrenLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  let fahrenTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureShown.innerHTML = Math.round(fahrenTemp);
+}
+
+let fahrenLink = document.querySelector("#fahren-templink");
+fahrenLink.addEventListener("click", displayFahrenTemp);
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureShown = document.querySelector("#tempDisplay");
+  fahrenLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  temperatureShown.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusLink = document.querySelector("#celsius-templink");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+let celsiusTemp = null;
 
 search("Harare");
